@@ -68,6 +68,29 @@ router.post((req, res) => {
     res.status(201).json(newTask);
 });
 
+// Toggle task completion status
+router.patch((req, res) => {
+    const { id } = req.body;
+
+    if(!id) {
+        return res.status(400).json({message: "Task ID is required"});
+    }
+
+    const taskIndex = tasks.findIndex((t) => t.id === id);
+
+    if(taskIndex === -1) {
+        return res.status(404).json({message: "Task not found"});
+    }
+
+    // Keep other task details unchanged and only flip completed status
+    tasks[taskIndex] = {
+        ...tasks[taskIndex],
+        completed: !tasks[taskIndex].completed,
+    };
+
+    res.status(200).json(tasks[taskIndex]);
+});
+
 export default router.handler({
     onError(err, req, res) {
         console.error(err);
