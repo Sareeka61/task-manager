@@ -11,4 +11,4 @@ export type CreateTaskInput = {
     description: string;
   };
 
-export type TaskFilterStatus = "completed" | "incomplete";
+export type TaskFilterStatus = "completed" | "incomplete" | "all";
