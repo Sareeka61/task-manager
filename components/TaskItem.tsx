@@ -47,7 +47,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onToggle }) => {
               : "bg-blue-600 hover:bg-blue-700 text-white"
           }`}
         >
-          {task.completed ? "Done" : "Mark As Done"}
+          {task.completed ? "Mark as Incomplete" : "Mark As Done"}
         </button>
       </div>
     </div>
