@@ -31,6 +31,8 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000)
 
+Netlify Link: [View Live](https://taskmanager-assessment.netlify.app/)
+
 ### Project Structure
 ```
 ├── pages/
